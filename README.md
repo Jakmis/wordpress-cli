@@ -5,7 +5,7 @@ cd wordpress-docker
 
 cp env.config .env
 
-#INSTALL WORDPRESS BY CLI
+# INSTALL WORDPRESS BY CLI
 docker-compose run -rm wpcli wp core install
 
 # BACKUP WORDPRESS BY CLI
