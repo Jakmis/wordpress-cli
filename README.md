@@ -1,14 +1,11 @@
 Automate your WordPress development workflow.
 # INSTALL 
-git clone https://github.com/petrgru/wordpress-docker
 
 cd wordpress-docker
 
 cp env.config .env
 
-nano .env #change what is need password!!!!!!!!
-
-# INSTALL WORDPRESS BY CLI
+#INSTALL WORDPRESS BY CLI
 docker-compose run -rm wpcli wp core install
 
 # BACKUP WORDPRESS BY CLI
@@ -19,3 +16,6 @@ tar cvfz wordpress.tar.gz build/wordpress
 
 # RESTORE FILE SYSTEM
 tar xvfz wordpress.tar.gz -C build/wordpress
+
+# CHANGE URL BY WP-CLI
+docker-compose run --rm wpcli wp search-replace {OLD_URL} {NEW_URL} --all-tables
